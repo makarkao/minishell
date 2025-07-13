@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 09:42:15 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/07 15:18:52 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 00:40:04 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*prompt_mini(t_shelldata *shelldata)
 		ft_concat(prompt, "unknown_user", &i);
 	else
 		ft_concat(prompt, user_value, &i);
-	ft_concat(prompt, " " ARROW_GOLD2DEF CLR_RESET " ", &i);
+	ft_concat(prompt, " " ARROW_GOLD2DEF "  " CLR_RESET, &i);
 	if (i >= 999)
 		modify_prompt(prompt);
 	return (prompt);
