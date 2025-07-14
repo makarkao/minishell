@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:00:56 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/08 13:46:43 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:59:19 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	free_minishell(t_minishell *minishell)
 			(free_strs(minishell->args), minishell->args = NULL);
 		if (minishell->env)
 			(free_strs(minishell->env), minishell->env = NULL);
+		if (minishell->path)
+			(free(minishell->path), minishell->path = NULL);
 		free(minishell);
 		minishell = tmp;
 	}
