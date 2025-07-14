@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:10:55 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:59:13 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:24:51 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		execute_built_in(t_shelldata *shelldata, t_minishell *shell);
 int		ft_exit(t_shelldata *shelldata, char **args);
 
 //------ft_echo------------------
-int		ft_echo(char **str);
+int		ft_echo(t_shelldata *shelldata, char **str);
 
 //------ft_env------------------
 int		ft_env(t_env *env);
