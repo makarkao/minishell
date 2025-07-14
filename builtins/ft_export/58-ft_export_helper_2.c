@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   58-ft_export_helper_2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:45:22 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:41 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:54:04 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,13 @@ char	**extract_env(t_shelldata *shelldata, t_env *env)
 	env_len = env_length(env);
 	env_list = (char **)ft_calloc(env_len + 1, sizeof(char *));
 	if (!env_list)
-		return (shelldata->state = -2, NULL);
+		return (perror("malloc"), shelldata->state = -2, NULL);
 	while (env)
 	{
 		env_list[i] = extract_env_helper(env);
 		if (!env_list[i])
-			return (free_strs(env_list), shelldata->state = -2, NULL);
+			return (perror("malloc"), free_strs(env_list),
+				shelldata->state = -2, NULL);
 		i++;
 		env = env->next;
 	}
@@ -92,9 +93,9 @@ void	print_env(t_shelldata *shelldata, t_env *list)
 	{
 		if (ft_strncmp("_=", env_list[i], 2))
 		{
-			ft_putstr_fd(1, "declare -x ");
-			ft_putstr_fd(1, env_list[i]);
-			ft_putstr_fd(1, "\n");
+			ft_inprint_join("declare -x ", env_list[i], "\n");
+			if (shelldata->state < 0)
+				break ;
 		}
 		i++;
 	}

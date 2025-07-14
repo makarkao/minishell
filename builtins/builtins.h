@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:10:55 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/14 10:24:51 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:37:05 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_exit(t_shelldata *shelldata, char **args);
 int		ft_echo(t_shelldata *shelldata, char **str);
 
 //------ft_env------------------
-int		ft_env(t_env *env);
+int		ft_env(t_shelldata *shelldata, t_env *env);
 t_env	*get_env_str(char *str, t_env *env);
 
 //------ft_unset------------------

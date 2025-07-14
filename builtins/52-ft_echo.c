@@ -30,10 +30,10 @@ int	is_echo_n_option(const char *arg)
 
 int	ft_echo(t_shelldata *shelldata, char **str)
 {
-	int	i;
-	int	print_newline;
-	char *print;
-	char *tmp;
+	int		i;
+	int		print_newline;
+	char	*print;
+	char	*tmp;
 
 	i = -1;
 	print_newline = 1;
@@ -41,13 +41,13 @@ int	ft_echo(t_shelldata *shelldata, char **str)
 	while (str[++i] && is_echo_n_option(str[i]))
 		print_newline = 0;
 	tmp = ft_strsjoin(str + i, ' ');
-	if(!tmp)
+	if (!tmp)
 		return (perror("malloc"), shelldata->state = -2, 1);
 	if (print_newline)
 	{
 		print = ft_strjoin(tmp, "\n");
 		free(tmp);
-		if(!print)
+		if (!print)
 			return (perror("malloc"), shelldata->state = -2, 1);
 	}
 	else

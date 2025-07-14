@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:57:25 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/14 09:46:43 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:54:47 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	error_messages(int type, char *message, char *file)
 	else if (type == 2)
 	{
 		tmp = ft_sthreecat(file, ": ", message);
-		if(!tmp)
-			return(perror("malloc"), shelldata->state = -2, 1);
+		if (!tmp)
+			return (perror("malloc"), shelldata->state = -2, 1);
 		ft_print_join("minishell: cd: ", tmp, "\n");
 		free(tmp);
 	}
@@ -51,7 +51,7 @@ int	update_pwd(t_shelldata *shelldata)
 	if (!shelldata->cwd)
 		return (free(new_pwd), shelldata->state = -2, 1);
 	env_pwd = get_env_str("PWD", shelldata->env);
-	if(!env_pwd)
+	if (!env_pwd)
 		return (free(new_pwd), 0);
 	env_pwd->ev_hide = 0;
 	return (free(env_pwd->value), env_pwd->value = new_pwd, 0);
@@ -64,18 +64,18 @@ int	update_oldpwd(t_shelldata *shelldata)
 	char	*oldpwd_nvalue;
 
 	env_opwd = get_env_str("OLDPWD", shelldata->env);
-	if(!env_opwd)
+	if (!env_opwd)
 		return (0);
 	env_pwd = get_env_str("PWD", shelldata->env);
-	if(!env_pwd)
+	if (!env_pwd)
 	{
 		(free(env_opwd->value), env_opwd->value = NULL);
 		env_opwd->ev_hide = 1;
 		return (0);
 	}
-	if(env_pwd->ev_hide == 0)
+	if (env_pwd->ev_hide == 0)
 		env_opwd->ev_hide = 0;
-	if(env_pwd->value)
+	if (env_pwd->value)
 	{
 		oldpwd_nvalue = ft_strdup(env_pwd->value);
 		if (!oldpwd_nvalue)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   56-ft_export.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:27:44 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:33 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:51:55 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	valid_input_nn(char *str, int *err)
 	{
 		if (str[i] == '=')
 			break ;
-		if (!ft_isalnum(str[i]) && str[i] != '_'
-			&& (str[i] != '+' || str[i + 1] != '='))
+		if (!ft_isalnum(str[i]) && str[i] != '_' && (str[i] != '+' || str[i
+					+ 1] != '='))
 			return (*err = export_errors(str, 0), 0);
 		i++;
 	}
