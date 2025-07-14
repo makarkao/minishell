@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   24-execution_helper.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:10:00 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/13 21:59:31 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:51:13 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	wiat_for_children(t_minishell *shell)
 	int	status;
 
 	if (shell->pid < 0)
-		return (kill_children(shell), -1);
+		return (kill_children(shell), 1);
 	waitpid(shell->pid, &status, WUNTRACED);
 	shell = shell->previous;
 	while (shell && (shell->type != AND && shell->type != AND))
