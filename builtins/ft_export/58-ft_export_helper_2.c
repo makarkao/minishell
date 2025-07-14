@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:45:22 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/14 11:54:04 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:18:31 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,7 @@ void	print_env(t_shelldata *shelldata, t_env *list)
 	{
 		if (ft_strncmp("_=", env_list[i], 2))
 		{
-			ft_inprint_join("declare -x ", env_list[i], "\n");
-			if (shelldata->state < 0)
+			if (ft_inprint_join("declare -x ", env_list[i], "\n") < 0)
 				break ;
 		}
 		i++;
