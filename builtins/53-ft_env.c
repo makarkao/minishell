@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:26:00 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/14 11:47:38 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:12:36 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,11 @@ int	ft_env(t_shelldata *shelldata, t_env *env)
 	tmp = ft_strsjoin(env_list, '\n');
 	free_strs(env_list);
 	if (!tmp)
-		return (perror("malloc"), 1);
+		return (perror("malloc"), shelldata->state = -2, 1);
 	print_env = ft_strjoin(tmp, "\n");
 	free(tmp);
 	if (!print_env)
-		return (perror("malloc"), 1);
+		return (perror("malloc"), shelldata->state = -2, 1);
 	if (ft_putstr_fd(1, print_env) < 0)
 		return (free(print_env), 1);
 	return (free(print_env), 0);
