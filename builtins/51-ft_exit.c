@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   51-ft_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 17:28:59 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:55 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:53:31 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 int	exit_errors_messages(char *value, int type)
 {
-	ft_putstr_fd(2, "minishell");
 	if (type == 0)
 	{
-		ft_putstr_fd(2, ": exit: ");
-		ft_putstr_fd(2, value);
-		ft_putstr_fd(2, ": numeric argument required\n");
+		ft_print_join("minishell: exit: ", value,
+			": numeric argument required\n");
 		return (2);
 	}
 	else if (type == 1)
 	{
-		ft_putstr_fd(2, ": exit: ");
-		ft_putstr_fd(2, "too many arguments\n");
+		ft_putstr_fd(2, "minishell: exit: oo many arguments\n");
 		return (1);
 	}
 	return (2);

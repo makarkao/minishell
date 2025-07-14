@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:10:55 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/08 16:31:38 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:46:43 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "./parsing/parsing.h"
 
 char		*prompt_mini(t_shelldata *shelldata);
-int			ft_print_join(t_shelldata *shelldata, char *s1, char *s2, char *s3);
+int			ft_print_join(char *s1, char *s2, char *s3);
 
 t_shelldata	*shelldata_memo(void);
 

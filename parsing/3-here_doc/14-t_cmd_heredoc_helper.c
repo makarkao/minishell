@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   12-t_cmd_heredoc_helper.c                          :+:      :+:    :+:   */
+/*   14-t_cmd_heredoc_helper.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 09:59:06 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/07 18:17:36 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:48:38 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	print_ctrd_msg(char *s)
 	t_shelldata	*shelldata;
 
 	shelldata = shelldata_memo();
-	ft_print_join(shelldata, "minishell: warning: here-document "
+	ft_print_join("minishell: warning: here-document "
 		"delimited by end-of-file (wanted '",
 		s,
 		"')\n");

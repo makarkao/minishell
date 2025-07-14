@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   57-ft_export_helper.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:27:44 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:37 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:58:19 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int	export_errors(char *cwd, int type)
 {
 	if (type == 0)
 	{
-		ft_putstr_fd(2, "minishell");
-		ft_putstr_fd(2, ": export: `");
-		ft_putstr_fd(2, cwd);
-		ft_putstr_fd(2, "': not a valid identifier\n");
+		ft_print_join("minishell: export: `", cwd,
+			"': not a valid identifier\n");
 		return (1);
 	}
 	return (1);

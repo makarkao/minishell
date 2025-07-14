@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:57:25 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/14 00:28:25 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:31:10 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,10 @@ int	update_oldpwd(t_shelldata *shelldata)
 		env_opwd->ev_hide = 1;
 		return (0);
 	}
+	if(env_pwd->ev_hide == 0)
+		env_opwd->ev_hide = 0;
 	if(env_pwd->value)
 	{
-		env_opwd->ev_hide = 0;
 		oldpwd_nvalue = ft_strdup(env_pwd->value);
 		if (!oldpwd_nvalue)
 			return (shelldata->state = -2, 1);
