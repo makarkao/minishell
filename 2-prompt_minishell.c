@@ -6,16 +6,18 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 09:42:15 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/14 00:40:04 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:46:35 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_print_join(t_shelldata *shelldata, char *s1, char *s2, char *s3)
+int	ft_print_join(char *s1, char *s2, char *s3)
 {
-	char	*sjoin;
+	char		*sjoin;
+	t_shelldata	*shelldata;
 
+	shelldata = shelldata_memo();
 	sjoin = ft_sthreecat(s1, s2, s3);
 	if (!sjoin)
 		return (shelldata->state = -2, perror("malloc"), -1);

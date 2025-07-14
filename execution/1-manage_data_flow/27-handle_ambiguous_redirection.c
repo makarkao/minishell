@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   24-handle_ambiguous_redirection.c                  :+:      :+:    :+:   */
+/*   27-handle_ambiguous_redirection.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 14:49:55 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/03 17:18:03 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:47:10 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_ambiguous_redir(t_shelldata *shelldata, t_redir *redir)
 	if (pattern_list_len(pattern_list) != 1)
 	{
 		(free_pattern_list_t(pattern_list), shelldata->state = -1);
-		return (ft_print_join(shelldata, "minishell: ", redir->redir_name,
+		return (ft_print_join("minishell: ", redir->redir_name,
 				": ambiguous redirect\n"), -1);
 	}
 	args = clean_expand_wildcard_helper(shelldata, pattern_list);
@@ -61,7 +61,7 @@ int	check_ambiguous_redir(t_shelldata *shelldata, t_redir *redir)
 	if (!args || args->next)
 	{
 		(free_args(args), shelldata->state = -1);
-		return (ft_print_join(shelldata, "minishell: ", redir->redir_name,
+		return (ft_print_join("minishell: ", redir->redir_name,
 				": ambiguous redirect\n"), -1);
 	}
 	return (free(redir->redir_name), redir->redir_name = args->str, 1);

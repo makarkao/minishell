@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   46-extract_path_helper.c                           :+:      :+:    :+:   */
+/*   48-extract_path_helper.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 21:57:01 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/03 23:24:13 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:48:04 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	check_stat_errno(t_shelldata *shelldata, char *str)
 	if (errno == ENOTDIR)
 	{
 		shelldata->state = -126;
-		ft_print_join(shelldata, "minishell: ", str, ": Not a directory\n");
+		ft_print_join("minishell: ", str, ": Not a directory\n");
 		shelldata->exit_status = 126;
 	}
 	else if (errno == ENOENT)
 	{
-		ft_print_join(shelldata, "minishell: ", str,
+		ft_print_join("minishell: ", str,
 			": No such file or directory\n");
 		shelldata->exit_status = 127;
 	}
@@ -44,13 +44,13 @@ int	cmd_normal_check(t_shelldata *shelldata, char *str)
 	}
 	if (S_ISDIR(buf.st_mode))
 	{
-		ft_print_join(shelldata, "minishell: ", str, ": Is a directory\n");
+		ft_print_join("minishell: ", str, ": Is a directory\n");
 		shelldata->exit_status = 126;
 		return (0);
 	}
 	if (access(str, X_OK) == -1)
 	{
-		ft_print_join(shelldata, "minishell: ", str, ": Permission denied\n");
+		ft_print_join("minishell: ", str, ": Permission denied\n");
 		shelldata->exit_status = 126;
 		return (0);
 	}

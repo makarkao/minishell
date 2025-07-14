@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   45-extract_path.c                                  :+:      :+:    :+:   */
+/*   47-extract_path.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 17:25:50 by makarkao          #+#    #+#             */
-/*   Updated: 2025/06/29 18:50:06 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:47:37 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	print_path_state(t_shelldata *shelldata, char *str, t_pcheck *pcheck)
 	if (pcheck->path_state == 126)
 	{
 		shelldata->exit_status = 126;
-		ft_print_join(shelldata, "minishell: ", pcheck->p_denied,
+		ft_print_join("minishell: ", pcheck->p_denied,
 			": Permission denied\n");
 	}
 	else
 	{
 		shelldata->exit_status = 127;
-		ft_print_join(shelldata, str, ": command not found\n", NULL);
+		ft_print_join(str, ": command not found\n", NULL);
 	}
 }
 
@@ -74,7 +74,7 @@ char	*extract_path(t_shelldata *shelldata, char *str)
 	if (!pcheck.path_value)
 	{
 		shelldata->state = -127;
-		ft_print_join(shelldata, "minishell: ", str,
+		ft_print_join("minishell: ", str,
 			": No such file or directory\n");
 		return (NULL);
 	}

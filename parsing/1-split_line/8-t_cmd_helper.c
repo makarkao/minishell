@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   5-t_cmd_helper.c                                   :+:      :+:    :+:   */
+/*   8-t_cmd_helper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:20:22 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/06 15:11:19 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 01:48:21 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	error_message(char *str)
 	t_shelldata	*shelldata;
 
 	shelldata = shelldata_memo();
-	ft_print_join(shelldata, "minishell: syntax error near unexpected token `",
+	ft_print_join("minishell: syntax error near unexpected token `",
 		str, "'\n");
 	if (shelldata->state < 0)
 		mini_exit(-shelldata->state);
