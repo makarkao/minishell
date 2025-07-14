@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 09:42:15 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/14 10:56:59 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:18:49 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	ft_inprint_join(char *s1, char *s2, char *s3)
 	sjoin = ft_sthreecat(s1, s2, s3);
 	if (!sjoin)
 		return (shelldata->state = -2, perror("malloc"), -1);
-	ft_putstr_fd(1, sjoin);
+	if (ft_putstr_fd(1, sjoin) < 0)
+		return (free(sjoin), -1);
 	free(sjoin);
 	return (1);
 }
