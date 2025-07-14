@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   59-ft_cd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 18:08:07 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:23 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:02:33 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	minus_option(t_shelldata *shelldata, char **cmd, int *ex)
 	status = chdir(oldpwd->value);
 	if (status == -1)
 		return (*ex = 1, error_messages(2, strerror(errno), oldpwd->value));
-	ft_putstr_fd(1, oldpwd->value);
-	write(1, "\n", 1);
+	if (ft_inprint_join(oldpwd->value, "\n", NULL) < 0)
+		return (*ex = 1, 1);
 	return (*ex = 0, 0);
 }
 
