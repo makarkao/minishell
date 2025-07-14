@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:44:04 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/10 14:34:11 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:55:30 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@
 # define COL_MINI "\001\033[1;38;5;15;48;5;161m\002"
 # define COL_PATH "\001\033[1;38;5;26;48;5;51m\002"
 # define COL_USER "\001\033[1;38;5;3;48;5;220m\002"
-# define ARROW_PINK2CYAN "\001\033[38;5;161;48;5;51m\002"
-# define ARROW_CYAN2GOLD "\001\033[1;38;5;51;48;5;220m\002"
-# define ARROW_GOLD2DEF "\001\033[38;5;220;49m\002"
-# define ARROW_CYAN2DEF "\001\033[38;5;51;49m\002"
+# define ARROW_PINK2CYAN "\001\033[38;5;161;48;5;51m\002\001\002"
+# define ARROW_CYAN2GOLD "\001\033[1;38;5;51;48;5;220m\002\001\002"
+# define ARROW_GOLD2DEF "\001\033[38;5;220;49m\002"
+# define ARROW_CYAN2DEF "\001\033[38;5;51;49m\002\001\002"
 # define CLR_RESET "\001\033[0m\002"
 
 extern volatile sig_atomic_t	g_sigint;
