@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 14:49:55 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/14 01:47:10 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:47:06 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int	check_ambiguous_redir(t_shelldata *shelldata, t_redir *redir)
 		return (ft_print_join("minishell: ", redir->redir_name,
 				": ambiguous redirect\n"), -1);
 	}
-	return (free(redir->redir_name), redir->redir_name = args->str, 1);
+	return (free(redir->redir_name), redir->redir_name = args->str,
+		free(args), 1);
 }

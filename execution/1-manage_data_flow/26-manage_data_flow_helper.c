@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:22:11 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/14 01:46:52 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 15:46:03 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	manage_redirections(t_shelldata *shelldata, t_redir *redir)
 			redirin = manage_redirin(redir, redirin);
 		if (redir->redirfd < 0)
 			return (shelldata->state = -1, ft_print_join(
-					"minishell: ", redir->redir_name, NULL), perror(": "),
+					"minishell: ", redir->redir_name, NULL), perror(" "),
 				(void)0);
 		redir = redir->next;
 	}
