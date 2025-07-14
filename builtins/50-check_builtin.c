@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   50-check_builtin.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melayyad <melayyad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 22:23:23 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/13 21:58:45 by melayyad         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:24:19 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	builtin_check(char **args)
 int	execute_built_in(t_shelldata *shelldata, t_minishell *shell)
 {
 	if (!ft_strcmp("echo", shell->args[0]))
-		return (ft_echo(shell->args));
+		return (ft_echo(shelldata, shell->args));
 	else if (!ft_strcmp("cd", shell->args[0]))
 		return (ft_cd(shelldata, shell->args));
 	else if (!ft_strcmp("pwd", shell->args[0]))

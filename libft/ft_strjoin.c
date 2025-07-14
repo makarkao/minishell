@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:25:24 by makarkao          #+#    #+#             */
-/*   Updated: 2024/11/15 00:00:53 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:36:55 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1)
-		return ((char *)s2);
-	if (!s2)
-		return ((char *)s1);
 	strj = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!strj)
 		return (NULL);
-	while (s1[i])
+	while (s1 && s1[i])
 	{
 		strj[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
+	while (s2 && s2[j])
 	{
 		strj[i + j] = s2[j];
 		j++;

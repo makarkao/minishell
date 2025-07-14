@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:57:25 by melayyad          #+#    #+#             */
-/*   Updated: 2025/07/14 01:31:10 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 09:46:43 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 int	error_messages(int type, char *message, char *file)
 {
-	ft_putstr_fd(2, "minishell");
-	ft_putstr_fd(2, ": cd: ");
+	char		*tmp;
+	t_shelldata	*shelldata;
+
+	shelldata = shelldata_memo();
 	if (type == 1)
-		ft_putstr_fd(2, message);
+		ft_print_join("minishell: cd: ", message, "\n");
 	else if (type == 2)
 	{
-		ft_putstr_fd(2, file);
-		write(2, ": ", 2);
-		ft_putstr_fd(2, message);
+		tmp = ft_sthreecat(file, ": ", message);
+		if(!tmp)
+			return(perror("malloc"), shelldata->state = -2, 1);
+		ft_print_join("minishell: cd: ", tmp, "\n");
+		free(tmp);
 	}
-	write(2, "\n", 1);
 	return (1);
 }
 

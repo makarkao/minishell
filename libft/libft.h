@@ -6,7 +6,7 @@
 /*   By: makarkao <makarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:26:16 by makarkao          #+#    #+#             */
-/*   Updated: 2025/07/08 11:27:08 by makarkao         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:19:45 by makarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ int					ft_numericheck(char *num);
 int					ft_isalpha(int c);
 void				ft_concat(char *dest, char *src, int *i);
 char				*ft_sthreecat(char *s1, char *s2, char *s3);
+char				*ft_strsjoin(char **strs, char c);
 
 #endif
