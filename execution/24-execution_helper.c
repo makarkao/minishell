@@ -28,7 +28,7 @@ int	wiat_for_children(t_minishell *shell)
 		return (kill_children(shell), 1);
 	waitpid(shell->pid, &status, WUNTRACED);
 	shell = shell->previous;
-	while (shell && (shell->type != AND && shell->type != AND))
+	while (shell && shell->type != AND && shell->type != OR)
 	{
 		if ((shell->type == WORD || shell->type == C_CMD) && shell->pid > 0)
 			waitpid(shell->pid, NULL, WUNTRACED);
