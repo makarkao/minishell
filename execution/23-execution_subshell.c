@@ -23,7 +23,8 @@ void	execute_subshell_word_case(t_shelldata *shelldata, t_minishell *shell)
 	if (!shell->args || !shell->args[0])
 		mini_exit(0);
 	else if (builtin_check(shell->args))
-		(execute_built_in(shelldata, shell), mini_exit(shelldata->exit_status));
+		(shelldata->exit_status = execute_built_in(shelldata, shell),
+			mini_exit(shelldata->exit_status));
 	else
 		shell->path = extract_path(shelldata, shell->args[0]);
 	if (shell->path)
