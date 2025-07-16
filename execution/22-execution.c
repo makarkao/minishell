@@ -76,7 +76,7 @@ int	execute_and_or(t_shelldata *shelldata, t_minishell *shell)
 		}
 		else
 			shelldata->exit_status = execute_subshell(shelldata, shell);
-		if (shelldata->exit_status == 130)
+		if (shelldata->exit_status == 130 && !shelldata->lvl)
 			return (130);
 		if (!shelldata->exit_status)
 			skip_to_next_command(&shell, AND);
