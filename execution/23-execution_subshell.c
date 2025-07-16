@@ -90,4 +90,3 @@ int	execute_subshell(t_shelldata *shelldata, t_minishell *shell)
 	}
 	return (wiat_for_children(shell));
 }
-
