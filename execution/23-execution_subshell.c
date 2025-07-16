@@ -52,8 +52,12 @@ void	execute_subshell_helper(t_shelldata *shelldata, t_minishell *shell)
 		execute_subshell_word_case(shelldata, shell);
 	else if (shell->type == C_CMD)
 	{
+		signal(SIGINT, sig_handler2);
 		shelldata->exit_status = execute_and_or(shelldata, shell->c_cmd);
-		mini_exit(shelldata->exit_status);
+		if (g_sigint == 2)
+			mini_exit(130);
+		else
+			mini_exit(shelldata->exit_status);
 	}
 	else if (shell->type == NONE)
 		mini_exit(0);
