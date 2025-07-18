@@ -31,7 +31,7 @@ void	check_stat_errno(t_shelldata *shelldata, char *str)
 		ft_putstr_fd(2, "minishell: Cannot allocate memory\n");
 		shelldata->exit_status = 126;
 	}
-	else if (errno == EACCESS)
+	else if (errno == EACCES)
 	{
 		ft_putstr_fd(2, "minishell: Permission denied\n");
 		shelldata->exit_status = 126;
